@@ -1,17 +1,62 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React, { StrictMode } from 'react'
+import ReactDOM from 'react-dom'
+import ewuImage from "./images/ewu.png"
+import "./index.css"
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+const App = () => {
+  return (
+    <React.Fragment>
+      <section className='booklist'>
+        {/* <h1>This is a booklist</h1> */}
+        <Book />
+        <Book />
+        <Book />
+        <Book />
+        <Book />
+        <Book />
+        <Book />
+        <Book />
+        <Book />
+      </section>
+    </React.Fragment>
+  )
+}
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+const Book = () => {
+  return (
+    <article className='book'>
+      <Image />
+      <Title />
+      <Author />
+    </article>
+  )
+}
+
+const Image = () => {
+  return (
+    <img
+      src={ewuImage}
+      alt='it ends with us book cover'
+    />
+  )
+}
+
+const Title = () =>{
+  return(
+    <h1>It ends with us</h1>
+  )
+}
+
+const Author = () =>{
+  return(
+    <h4>Collen Hoover</h4>
+  )
+}
+ReactDOM.render(<App />, document.getElementById('root'))
+//Alternative
+// const root = ReactDOM.createRoot(document.getElementById('root'))
+// root.render(
+//   <StrictMode>
+//     <App/>
+//   </StrictMode>
+// )

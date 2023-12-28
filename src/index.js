@@ -49,7 +49,7 @@ const Title = () =>{
 
 const Author = () =>{
   return(
-    <h4>Collen Hoover</h4>
+    <h4 style={{color: "#617d98", fontSize:"0.75rem", marginTop:"0.25rem" }}>Collen Hoover</h4>
   )
 }
 ReactDOM.render(<App />, document.getElementById('root'))

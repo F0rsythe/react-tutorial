@@ -54,7 +54,7 @@ const Author = () =>{
 }
 ReactDOM.render(<App />, document.getElementById('root'))
 //Alternative
-// const root = ReactDOM.createRoot(document.getElementById('root'))
+// const root = ReactDOM.createRoot(document.getElementById('root'))c:\Users\Demilade\Videos\darwin's game\Darwin's Game - 11 [720p x265].mkv c:\Users\Demilade\Videos\darwin's game\Darwin's Game - 09 [720p x265].mkv c:\Users\Demilade\Videos\darwin's game\Darwin's Game - 10 [720p x265].mkv
 // root.render(
 //   <StrictMode>
 //     <App/>

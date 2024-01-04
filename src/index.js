@@ -19,7 +19,10 @@ const App = () => {
     <React.Fragment>
       <section className='booklist'>
         {/* <h1>This is a booklist</h1> */}
-        <Book img={firstbook.img} title={firstbook.title} author={firstbook.author} />
+        <Book img={firstbook.img} title={firstbook.title} author={firstbook.author}>
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic provident nam maiores accusamus doloremque
+          quo debitis repellendus sed at saepe!</p>
+        </Book>
         <Book img={secondbook.img} title={secondbook.title} author={secondbook.author} />
       </section>
     </React.Fragment>
@@ -38,12 +41,13 @@ const App = () => {
 // }
 
 const Book = (props) =>{
-  const {img, title, author} = props
+  const {img, title, author, children} = props
   return(
     <article className='book'>
       <img src={img} alt="this is the picture of a book" />
       <h1>{title}</h1>
       <h4>{author}</h4>
+      {children}
     </article>
   )
 }

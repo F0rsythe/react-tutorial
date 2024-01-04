@@ -26,17 +26,27 @@ const App = () => {
   )
 }
 
-const Book = (props) => {
+// const Book = (props) => {
 
-  return (
+//   return (
+//     <article className='book'>
+//       <img src = {props.img} alt="book-image" />
+//       <h1>{props.title}</h1>
+//       <h4>{props.author}</h4>
+//     </article>
+//   )
+// }
+
+const Book = (props) =>{
+  const {img, title, author} = props
+  return(
     <article className='book'>
-      <img src = {props.img} alt="book-image" />
-      <h1>{props.title}</h1>
-      <h4>{props.author}</h4>
+      <img src={img} alt="this is the picture of a book" />
+      <h1>{title}</h1>
+      <h4>{author}</h4>
     </article>
   )
 }
-
 ReactDOM.render(<App />, document.getElementById('root'))
 //Alternative
 // const root = ReactDOM.createRoot(document.getElementById('root'))c:\Users\Demilade\Videos\darwin's game\Darwin's Game - 11 [720p x265].mkv c:\Users\Demilade\Videos\darwin's game\Darwin's Game - 09 [720p x265].mkv c:\Users\Demilade\Videos\darwin's game\Darwin's Game - 10 [720p x265].mkv

@@ -1,23 +1,10 @@
 import React, { StrictMode } from 'react'
 import ReactDOM from 'react-dom/client'
-import ewuImage from "./images/ewu.png"
-import rohbookCover from "./images/reminders-of-him 1.jpg"
+import { books} from './books'
+import Book from "./Book"
 import "./index.css"
 
-const books = [
-{
-  id: 1,
-  img: ewuImage,
-  title: "It ends with us",
-  author: "Colleen Hoover"
-},
-{
-  id:2,
-  img: rohbookCover,
-  title: 'Reminders of Him',
-  author: 'Colleen Hoover',
-}
-];
+
 const App = () => {
   return (
     <React.Fragment>
@@ -45,46 +32,7 @@ const App = () => {
 //     </article>
 //   )
 // }
-const click = (e) =>{
-  console.log(e.target)
-  console.log(e)
-alert("Hello World")
-}
-const complexBtn = (author) =>{
-  alert(`This is the author: ${author}`)
-}
 
-const Book = (props) =>{
-  const {img, title, author} = props
-  const mouseOver = (title) => {
-  console.log(title)
-  }
-  return (
-    <div
-      onMouseOver={() => {
-        console.log('HOVERRR')
-      }}
-    >
-      <article className='book'>
-        <img src={img} alt='this is the picture of a book' />
-        <h1>{title}</h1>
-        <h4>{author}</h4>
-        <button type='button' onClick={click}>
-          CLICK ME
-        </button>
-        <button
-          type='button'
-          onClick={() => {
-            complexBtn(author)
-          }}
-        >
-          COMPLEX
-        </button>
-        <button type='button' onMouseOver={()=>{console.log("It finally works")}}>HOVER</button>
-      </article>
-    </div>
-  )
-}
 //Alternative
 // ReactDOM.render(<App />, document.getElementById('root'))
 

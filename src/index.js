@@ -4,26 +4,32 @@ import ewuImage from "./images/ewu.png"
 import rohbookCover from "./images/reminders-of-him 1.jpg"
 import "./index.css"
 
-const firstbook = {
+const books = [
+{
+  id: 1,
   img: ewuImage,
   title: "It ends with us",
   author: "Colleen Hoover"
-}
-const secondbook = {
+},
+{
+  id:2,
   img: rohbookCover,
   title: 'Reminders of Him',
   author: 'Colleen Hoover',
 }
+];
 const App = () => {
   return (
     <React.Fragment>
       <section className='booklist'>
         {/* <h1>This is a booklist</h1> */}
-        <Book img={firstbook.img} title={firstbook.title} author={firstbook.author}>
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic provident nam maiores accusamus doloremque
-          quo debitis repellendus sed at saepe!</p>
-        </Book>
-        <Book img={secondbook.img} title={secondbook.title} author={secondbook.author} />
+        {books.map((book)=>{
+          // The line below is not important becuase the property has already been destructured in the book component
+          const {img, author, title} = book
+          return(
+            <Book {...book} key={book.id} />
+          );
+        })}
       </section>
     </React.Fragment>
   )
@@ -39,15 +45,23 @@ const App = () => {
 //     </article>
 //   )
 // }
-
+const click = (e) =>{
+  console.log(e.target)
+  console.log(e)
+alert("Hello World")
+}
+const complexBtn = (author) =>{
+  alert(`This is the author: ${author}`)
+}
 const Book = (props) =>{
-  const {img, title, author, children} = props
-  return(
+  const {img, title, author} = props
+  return (
     <article className='book'>
-      <img src={img} alt="this is the picture of a book" />
+      <img src={img} alt='this is the picture of a book' />
       <h1>{title}</h1>
       <h4>{author}</h4>
-      {children}
+      <button type='button' onClick={click}>CLICK ME</button>
+      <button type='button' onClick={()=>{complexBtn(author)}}>COMPLEX</button>
     </article>
   )
 }

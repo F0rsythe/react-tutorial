@@ -1,5 +1,5 @@
 import React, { StrictMode } from 'react'
-import ReactDOM from 'react-dom'
+import ReactDOM from 'react-dom/client'
 import ewuImage from "./images/ewu.png"
 import rohbookCover from "./images/reminders-of-him 1.jpg"
 import "./index.css"
@@ -53,23 +53,51 @@ alert("Hello World")
 const complexBtn = (author) =>{
   alert(`This is the author: ${author}`)
 }
+
 const Book = (props) =>{
   const {img, title, author} = props
+  const mouseOver = (title) => {
+  console.log(title)
+  }
   return (
-    <article className='book'>
-      <img src={img} alt='this is the picture of a book' />
-      <h1>{title}</h1>
-      <h4>{author}</h4>
-      <button type='button' onClick={click}>CLICK ME</button>
-      <button type='button' onClick={()=>{complexBtn(author)}}>COMPLEX</button>
-    </article>
+    <div
+      onMouseOver={() => {
+        console.log('HOVERRR')
+      }}
+    >
+      <article className='book'>
+        <img src={img} alt='this is the picture of a book' />
+        <h1>{title}</h1>
+        <h4>{author}</h4>
+        <button type='button' onClick={click}>
+          CLICK ME
+        </button>
+        <button
+          type='button'
+          onClick={() => {
+            complexBtn(author)
+          }}
+        >
+          COMPLEX
+        </button>
+        <button type='button' onMouseOver={()=>{console.log("It finally works")}}>HOVER</button>
+      </article>
+    </div>
   )
 }
-ReactDOM.render(<App />, document.getElementById('root'))
 //Alternative
-// const root = ReactDOM.createRoot(document.getElementById('root'))c:\Users\Demilade\Videos\darwin's game\Darwin's Game - 11 [720p x265].mkv c:\Users\Demilade\Videos\darwin's game\Darwin's Game - 09 [720p x265].mkv c:\Users\Demilade\Videos\darwin's game\Darwin's Game - 10 [720p x265].mkv
-// root.render(
-//   <StrictMode>
-//     <App/>
-//   </StrictMode>
-// )
+// ReactDOM.render(<App />, document.getElementById('root'))
+
+const root = ReactDOM.createRoot(document.getElementById("root"))
+root.render(
+  <StrictMode>
+  <App/>
+  </StrictMode>
+)
+
+
+// 17th
+
+// I might have to miss CDS if it's on wednesday
+
+// If the meeting is on 

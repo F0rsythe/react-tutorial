@@ -1,26 +1,8 @@
 import React, { StrictMode } from 'react'
 import ReactDOM from 'react-dom/client'
-import { books} from './books'
-import Book from "./Book"
+import App from './App'
 import "./index.css"
 
-
-const App = () => {
-  return (
-    <React.Fragment>
-      <section className='booklist'>
-        {/* <h1>This is a booklist</h1> */}
-        {books.map((book)=>{
-          // The line below is not important becuase the property has already been destructured in the book component
-          const {img, author, title} = book
-          return(
-            <Book {...book} key={book.id} />
-          );
-        })}
-      </section>
-    </React.Fragment>
-  )
-}
 
 // const Book = (props) => {
 

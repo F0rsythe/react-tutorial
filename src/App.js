@@ -1,18 +1,19 @@
 import React from 'react'
-import Book from './Book'
-import { books } from './books'
+import ErrorExample from './Hooks/useState/useState-error-example'
 
 const App = () => {
   return (
     <React.Fragment>
-      <section className='booklist'>
+        {/* <section> */}
+      {/* <section className='booklist'>
         {/* <h1>This is a booklist</h1> */}
-        {books.map((book) => {
+        {/* {books.map((book) => {
           // The line below is not important becuase the property has already been destructured in the book component
           const { img, author, title } = book
-          return <Book {...book} key={book.id} />
+          return <Book {...book} key={book.id} /> 
         })}
-      </section>
+       </section> */}
+    <ErrorExample/>
     </React.Fragment>
   )
 }

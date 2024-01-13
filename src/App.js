@@ -1,5 +1,7 @@
 import React from 'react'
 import ErrorExample from './Hooks/useState/useState-error-example'
+import ArrayExample from './Hooks/useState/useState-array-example'
+
 
 const App = () => {
   return (
@@ -13,7 +15,8 @@ const App = () => {
           return <Book {...book} key={book.id} /> 
         })}
        </section> */}
-    <ErrorExample/>
+    {/* <ErrorExample/> */}
+    <ArrayExample/>
     </React.Fragment>
   )
 }
